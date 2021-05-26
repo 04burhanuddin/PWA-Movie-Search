@@ -2,18 +2,11 @@ var CACHE_NAME = "static_cache";
 
 //Files to save in cache
 var STATIC_ASSETS = ["/",
-    // bootstrap
-    // "/js/bootstrap/bootstrap.min.js",
-    // "/js/bootstrap/jquery-3.2.1.min.js",
-    // "/js/bootstrap/popper.min.js",
-
-
-    // fetch-api
-    "/js/fetch-api/image.main.js",
+    "/css/bootstrap.min.css",
+    "/js/bootstrap/popper.min.js",
+    "/js/bootstrap/jquery-3.2.1.min.js",
+    "/js/bootstrap/bootstrap.min.js",
     "/js/fetch-api/movie.main.js",
-
-    // js
-
     // assets image
     "/assets/logo/logo-dark.png",
     "/assets/logo/logo-white.png"
