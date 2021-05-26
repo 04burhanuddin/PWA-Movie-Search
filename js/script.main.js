@@ -52,4 +52,9 @@ $('#search-button').on('click', function () {
     movieSearch();
 });
 
-
+// add tombol keyboar
+$('#search-input').on('keyup', function (event) {
+    if (event.which === 13) {
+        movieSearch();
+    }
+});
