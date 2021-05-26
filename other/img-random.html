@@ -7,10 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="manifest" href="../manifest.json">
 
-        <title>Movie | Search</title>
+        <title>Random | Image</title>
     </head>
 
     <body>
@@ -26,10 +26,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Searc Movie</a>
+                            <a class="nav-link" href="../index.html">Searc Movie<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="other/img-random.html">Random Image</a>
+                            <a class="nav-link" href="../other/img-random.html">Random Image</a>
                         </li>
                     </ul>
                 </div>
@@ -38,11 +38,13 @@
 
         <div class="container">
             <div class="row mt-5 justify-content-center">
-                <div class="col-md-8">
-                    <h2 class="text-center">Search Movie</h2>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Movie Title..." id="search-input">
-                        <button class=" btn btn-danger" type="button" id="search-button">Search</button>
+                <div class="col-md-11">
+                    <div class="card mb-5">
+                        <div id="cat_result">
+                            <div class="card-body">
+                                <a href="#" class="card-link" id="cat_btn">See Deatils</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,14 +58,14 @@
         </div>
 
         <!-- Optional JavaScript -->
-        <!-- jQuery fi  rst, then Popper.js, then Bootstrap JS -->
-        <script src="./js/bootstrap/jquery-3.2.1.min.js"></script>
-        <script src="./js/bootstrap/popper.min.js"></script>
-        <script src="./js/bootstrap/bootstrap.min.js"></script>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="../js/bootstrap/jquery-3.2.1.min.js"></script>
+        <script src="../js/bootstrap/popper.min.js"></script>
+        <script src="../js/bootstrap/bootstrap.min.js"></script>
         <!-- my js -->
-        <script src="./js/fetch-api/movie.main.js"></script>
-        <script src="./js/service.main.js"></script>
-        <script src="./service-worker.js"></script>
+        <script src="../js/fetch-api/image.main.js"></script>
+        <script src="../js/service.main.js"></script>
+        <script src="../js/service-worker.js"></script>
     </body>
 
 </html>

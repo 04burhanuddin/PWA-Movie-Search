@@ -1,7 +1,24 @@
 var CACHE_NAME = "static_cache";
 
 //Files to save in cache
-var STATIC_ASSETS = ["/", "/css/bootstrap.min.css", "/js/bootstrap.min.js", "/js/jquery-3.2.1.min.js", "/js/popper.min.js", "/js/script.main.js"];
+var STATIC_ASSETS = ["/",
+    // bootstrap
+    // "/js/bootstrap/bootstrap.min.js",
+    // "/js/bootstrap/jquery-3.2.1.min.js",
+    // "/js/bootstrap/popper.min.js",
+
+
+    // fetch-api
+    "/js/fetch-api/image.main.js",
+    "/js/fetch-api/movie.main.js",
+
+    // js
+
+    // assets image
+    "/assets/logo/logo-dark.png",
+    "/assets/logo/logo-white.png"
+
+];
 
 async function preCache() {
     const cache = await caches.open(CACHE_NAME);
