@@ -1,0 +1,10 @@
+{
+    "theme_color": "#4a90e2",
+    "background_color": "#4a90e2",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/index.html",
+    "name": "myapp",
+    "short_name": "myapp",
+    "description": "percobaan"
+}
