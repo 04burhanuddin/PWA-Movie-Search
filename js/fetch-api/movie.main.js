@@ -26,7 +26,8 @@ function movieSearch() {
                                 <div class="card-body">
                                     <h5 class="card-title">` + data.Title + `</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">` + data.Year + `</h6>
-                                    <a href="#" class="card-link">See Deatils</a>
+                                    <a href="#" class="card-link see-detail" data-toggle="modal" data-target="#detail"
+                                    data-id="`+ data.imdbID + `">See Deatils</a>
                                 </div>
                             </div>
                         <div>
@@ -48,7 +49,48 @@ function movieSearch() {
     });
 }
 
-$('#search-button').on('click', function () {
+// fungsi ini akan menampilkan dari detail film dengan click detail yang ada pada element movie list yang di amil dengan menggunakan
+// jquery
+$('#movie-list').on('click', '.see-detail', function () {
+    $.ajax({
+        url: 'http://omdbapi.com',
+        type: 'get',
+        dataType: 'json',
+        data: {
+            'apikey': 'dd5cb627',
+            'i': $(this).data('id')
+        },
+
+        // jika sukses
+        success: function (movie) {
+            if (movie.Response === "True") {
+                //ini berfungsi untuk mengisi element html yagn afa pada halam index denhgan id modal-body
+                //untuk mengisi detail dari film
+                $('#modal-body').html(`
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="`+ movie.Poster + `" class="img-fluid">
+                            </div>
+                            <div class="col-md-8">
+                                <ul class="list-group">
+                                    <li class="list-group-item">`+ movie.Title + `</li>
+                                    <li class="list-group-item">`+ movie.Released + `</li>
+                                    <li class="list-group-item">`+ movie.Runtime + `</li>
+                                    <li class="list-group-item">`+ movie.Director + `</li>
+                                    <li class="list-group-item">`+ movie.Actors + `</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `)
+            }
+        }
+    });
+});
+
+// fungsi ini di jalankan  ketika search button di tekan dengan fungsi yang sufah di buat paling atas yaitu moviesearch
+$('#search-bottom').on('click', function () {
     movieSearch();
 });
 

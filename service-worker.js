@@ -13,8 +13,12 @@ var STATIC_ASSETS =
         "js/bootstrap/bootstrap.min.js",
         "js/fetch-api/movie.main.js",
         // assets image logo
+        "assets/logo/info-white.svg",
         "assets/logo/logo-dark.png",
-        "assets/logo/logo-white.png"
+        "assets/logo/logo-white.png",
+        // assets content
+        "assets/content/searching.png",
+        "assets/content/result.png"
     ];
 
 async function preCache() {

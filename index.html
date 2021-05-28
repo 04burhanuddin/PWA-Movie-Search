@@ -2,7 +2,8 @@
 <html lang="en">
 
     <head>
-        <!-- Required meta tags -->
+        <!-- Required meta tags, memenuhi semua meta tag adalah salah satu syarat dari PWA dan dilakukan
+        testing dengan menggunakan lighouse dengan melihat score point yang didapatkan -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="theme-color" content="#4285f4">
@@ -22,8 +23,11 @@
         <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="assets/logo/logo-white.png" height="30" width="30" alt="Hello">
+                </a>
+                <a class="navbar-brand" href="info.html">
+                    <img src="assets/logo/info-white.svg" height="30" width="30" alt="Hello">
                 </a>
             </div>
         </nav>
@@ -49,6 +53,29 @@
             </div>
         </div>
         <!-- end content -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- tempat untuk menampilkan detail dari film -->
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
 
         <!-- jQuery fi  rst, then Popper.js, then Bootstrap JS -->
         <script src="js/bootstrap/jquery-3.2.1.min.js"></script>
