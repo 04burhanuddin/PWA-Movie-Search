@@ -5,7 +5,7 @@
     "scope": "/",
     "start_url": "/index.html",
     "name": "Movie-Search",
-    "short_name": "AnyMovie",
+    "short_name": "Movis",
     "icons": [
         {
             "src": "/assets/icons/icon-192x192.png",
@@ -28,7 +28,7 @@
             "type": "image/png"
         },
         {
-            "src": "images/icons/icon-96x96.png",
+            "src": "/assets/icons/icon-192x192.png",
             "sizes": "144x144",
             "type": "image/png",
             "purpose": "maskable"

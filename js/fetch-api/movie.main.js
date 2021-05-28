@@ -1,8 +1,7 @@
-// dd5cb627
+// dd5cb627 adalah kode api key yang bisa di dapatkan melalui email
 function movieSearch() {
     // untuk mengosongkan beranda saat request selanjutnya
     $('#movie-list').html('');
-
     $.ajax({
         url: 'http://omdbapi.com',
         type: 'get',
@@ -18,6 +17,7 @@ function movieSearch() {
                 let movies = result.Search;
                 // console.log(movies);
 
+                // response jika berhasil/jika data di temukan
                 $.each(movies, function (i, data) {
                     $('#movie-list').append(`
                         <div class="col-md-4">
@@ -52,7 +52,7 @@ $('#search-button').on('click', function () {
     movieSearch();
 });
 
-// add tombol keyboar
+// add tombol keyboar, ini berfunsi untuk pencarian dengan mengguankan tombol enter
 $('#search-input').on('keyup', function (event) {
     if (event.which === 13) {
         movieSearch();

@@ -1,31 +1,37 @@
-var CACHE_NAME = "static_cache";
-
-//Files to save in cache
-var STATIC_ASSETS = ["/",
-    "/css/bootstrap.min.css",
-    "/js/bootstrap/popper.min.js",
-    "/js/bootstrap/jquery-3.2.1.min.js",
-    "/js/bootstrap/bootstrap.min.js",
-    "/js/fetch-api/movie.main.js",
-    // assets image
-    "/assets/logo/logo-dark.png",
-    "/assets/logo/logo-white.png"
-
-];
+// Menambahkan nama cache
+var CACHE_NAME = "local-cache";
+// File yang akan di simpan pada cacha
+var STATIC_ASSETS =
+    [
+        // root
+        "/",
+        // css
+        "css/bootstrap.min.css",
+        // js
+        "js/bootstrap/popper.min.js",
+        "js/bootstrap/jquery-3.2.1.min.js",
+        "js/bootstrap/bootstrap.min.js",
+        "js/fetch-api/movie.main.js",
+        // assets image logo
+        "assets/logo/logo-dark.png",
+        "assets/logo/logo-white.png"
+    ];
 
 async function preCache() {
     const cache = await caches.open(CACHE_NAME);
     return cache.addAll(STATIC_ASSETS);
 }
 
+// Untuk menambahkan opsi instalasi
 self.addEventListener("install", (event) => {
-    console.log("[SW] installed");
+    console.log("installed finished");
     event.waitUntil(preCache());
 });
 self.addEventListener("activate", (event) => {
-    console.log("[SW] activated");
+    console.log("activated");
 });
 
+// fetch assets
 async function fetchAssets(event) {
     try {
         const response = await fetch(event.request);
@@ -36,7 +42,8 @@ async function fetchAssets(event) {
     }
 }
 
+// fetch
 self.addEventListener("fetch", (event) => {
-    console.log("[SW] fetched");
+    console.log("fetched finished");
     event.respondWith(fetchAssets(event));
 });

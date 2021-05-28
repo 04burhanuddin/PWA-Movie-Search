@@ -11,7 +11,7 @@
         <link rel="apple-touch-icon" sizes="152x152" href="assets/logo/logo-dark.png">
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="manifest" href="manifest.json">
 
         <title>Movie | Search</title>
@@ -19,6 +19,7 @@
     </head>
 
     <body>
+        <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
             <div class="container">
                 <a class="navbar-brand" href="#">
@@ -26,7 +27,9 @@
                 </a>
             </div>
         </nav>
+        <!-- end navbar -->
 
+        <!-- content -->
         <div class="container">
             <div class="row mt-5 justify-content-center">
                 <div class="col-md-8">
@@ -38,21 +41,22 @@
                 </div>
             </div>
 
-            <!-- pemisah -->
+            <!-- garis pemisah -->
             <hr>
 
+            <!-- fetch data movie akan di tampilkan di sini -->
             <div class="row" id="movie-list">
-
             </div>
         </div>
+        <!-- end content -->
 
-        <!-- Optional JavaScript -->
         <!-- jQuery fi  rst, then Popper.js, then Bootstrap JS -->
         <script src="js/bootstrap/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap/popper.min.js"></script>
         <script src="js/bootstrap/bootstrap.min.js"></script>
+
         <!-- my js -->
-        <script src="/js/fetch-api/movie.main.js"></script>
+        <script src="js/fetch-api/movie.main.js"></script>
         <script src="js/service.main.js"></script>
         <script src="service-worker.js"></script>
     </body>
