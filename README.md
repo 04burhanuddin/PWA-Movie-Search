@@ -1,4 +1,6 @@
 ### <b>Pemrograman Web Mobile <i>Progressive Web App (PWA):</i></b>
+### <b>Masalah yang terjadi</b>
+- Pencarian pada device laptop bisa dilakukan sedangkan pada browser hp tidak bisa melakukan pencarain
 ### <b>API Spec</b>
 - Sumber API dari :  https://www.omdbapi.com/
 - Untuk pengunaan API harus register terlebih dahulu pada link di atas untuk mendapatkan APIKEY, link aktivasi key di kirimlan melalui emial yang di daftarkan.
