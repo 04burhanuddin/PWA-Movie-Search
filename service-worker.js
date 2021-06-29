@@ -26,16 +26,19 @@ async function preCache() {
     return cache.addAll(STATIC_ASSETS);
 }
 
-// Untuk menambahkan opsi instalasi
+// Untuk menambahkan opsi instalasi add to home screen
 self.addEventListener("install", (event) => {
+    // jika berhasil di install maka akan menampilkan pada cosole log installed finished
     console.log("installed finished");
     event.waitUntil(preCache());
 });
+
+// cek service worker
 self.addEventListener("activate", (event) => {
     console.log("activated");
 });
 
-// fetch assets
+// Return cache setelah melakukan penginstalan open dan fetch
 async function fetchAssets(event) {
     try {
         const response = await fetch(event.request);

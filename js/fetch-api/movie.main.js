@@ -11,7 +11,7 @@ function movieSearch() {
             's': $('#search-input').val()
         },
 
-        // jika sukses
+        // jika sukses mengambil data
         success: function (result) {
             if (result.Response == "True") {
                 let movies = result.Search;
