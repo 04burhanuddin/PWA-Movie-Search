@@ -1,6 +1,5 @@
 // dd5cb627 adalah kode api key yang bisa di dapatkan melalui email
 function movieSearch() {
-    // untuk mengosongkan beranda saat request selanjutnya
     $('#movie-list').html('');
     $.ajax({
         url: 'http://omdbapi.com',
@@ -11,13 +10,10 @@ function movieSearch() {
             's': $('#search-input').val()
         },
 
-        // jika sukses mengambil data
         success: function (result) {
             if (result.Response == "True") {
                 let movies = result.Search;
                 // console.log(movies);
-
-                // response jika berhasil/jika data di temukan
                 $.each(movies, function (i, data) {
                     $('#movie-list').append(`
                         <div class="col-md-4">
@@ -37,7 +33,6 @@ function movieSearch() {
                 // untuk mengosongkan inputan
                 $('#search-input').val('');
 
-                // jika gagal
             } else {
                 $('#movie-list').html(`
                     <div class="col">
@@ -49,8 +44,6 @@ function movieSearch() {
     });
 }
 
-// fungsi ini akan menampilkan dari detail film dengan click detail yang ada pada element movie list yang di amil dengan menggunakan
-// jquery
 $('#movie-list').on('click', '.see-detail', function () {
     $.ajax({
         url: 'http://omdbapi.com',
@@ -61,11 +54,8 @@ $('#movie-list').on('click', '.see-detail', function () {
             'i': $(this).data('id')
         },
 
-        // jika sukses
         success: function (movie) {
             if (movie.Response === "True") {
-                //ini berfungsi untuk mengisi element html yagn afa pada halam index denhgan id modal-body
-                //untuk mengisi detail dari film
                 $('#modal-body').html(`
                     <div class="container-fluid">
                         <div class="row">
@@ -89,12 +79,10 @@ $('#movie-list').on('click', '.see-detail', function () {
     });
 });
 
-// fungsi ini di jalankan  ketika search button di tekan dengan fungsi yang sufah di buat paling atas yaitu moviesearch
 $('#search-bottom').on('click', function () {
     movieSearch();
 });
 
-// add tombol keyboar, ini berfunsi untuk pencarian dengan mengguankan tombol enter
 $('#search-input').on('keyup', function (event) {
     if (event.which === 13) {
         movieSearch();

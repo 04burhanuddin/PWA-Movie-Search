@@ -1,22 +1,15 @@
-// Menambahkan nama cache
 var CACHE_NAME = "local-cache";
-// File yang akan di simpan pada cacha
 var STATIC_ASSETS =
     [
-        // root
         "/",
-        // css
         "css/bootstrap.min.css",
-        // js
         "js/bootstrap/popper.min.js",
         "js/bootstrap/jquery-3.2.1.min.js",
         "js/bootstrap/bootstrap.min.js",
         "js/fetch-api/movie.main.js",
-        // assets image logo
         "assets/logo/info-white.svg",
         "assets/logo/logo-dark.png",
         "assets/logo/logo-white.png",
-        // assets content
         "assets/content/searching.png",
         "assets/content/result.png"
     ];
@@ -26,19 +19,16 @@ async function preCache() {
     return cache.addAll(STATIC_ASSETS);
 }
 
-// Untuk menambahkan opsi instalasi add to home screen
 self.addEventListener("install", (event) => {
-    // jika berhasil di install maka akan menampilkan pada cosole log installed finished
     console.log("installed finished");
     event.waitUntil(preCache());
 });
 
-// cek service worker
+
 self.addEventListener("activate", (event) => {
     console.log("activated");
 });
 
-// Return cache setelah melakukan penginstalan open dan fetch
 async function fetchAssets(event) {
     try {
         const response = await fetch(event.request);
@@ -49,7 +39,6 @@ async function fetchAssets(event) {
     }
 }
 
-// fetch
 self.addEventListener("fetch", (event) => {
     console.log("fetched finished");
     event.respondWith(fetchAssets(event));
