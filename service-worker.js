@@ -11,7 +11,9 @@ var STATIC_ASSETS =
         "assets/logo/logo-dark.png",
         "assets/logo/logo-white.png",
         "assets/content/searching.png",
-        "assets/content/result.png"
+        "assets/content/result.png",
+        "info.html",
+        "manifest.json"
     ];
 
 async function preCache() {
